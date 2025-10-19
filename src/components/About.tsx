@@ -48,15 +48,38 @@ const About = () => {
 
           <div className="section-appear space-y-6">
             <p className="text-lg text-foreground leading-relaxed">
-              I'm Mohammed Abdul Salam, a Computer Science graduate (MS, University of Texas at Tyler) with{" "}
-              <span className="font-semibold text-primary">7+ years of experience</span> designing scalable,
-              human-centered applications. My work spans fintech, AI-driven media tools, mobile development,
-              and systems engineering.
+              As a Software Engineer, Systems Developer, and Co-Founder, I design and deliver scalable, intelligent, and human-centered technology that bridges engineering excellence with real-world impact.
             </p>
 
             <p className="text-lg text-foreground leading-relaxed">
-              I focus on building reliable software with real-world impact, bringing together technical
-              expertise and a deep understanding of user needs to create solutions that truly matter.
+              With a Master's in Computer Science and over 7 years of experience, I've built products across fintech, AI-driven media platforms, and intelligent automation systems. My work spans from a patent-pending location-based communication platform to enterprise-grade fintech solutions and AI-backed content tools.
+            </p>
+
+            <p className="text-lg text-foreground leading-relaxed">
+              Currently, I'm:
+            </p>
+            
+            <ul className="space-y-3 text-lg text-foreground leading-relaxed ml-6">
+              <li className="flex items-start gap-3">
+                <span className="text-primary mt-1 flex-shrink-0">•</span>
+                <span><span className="font-semibold text-primary">Co-Founder @ FewCuts</span> - building a context-aware AI video editing platform that helps enterprises and podcast teams turn long-form conversations into high-performing short clips using niche-specific AI models.</span>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="text-primary mt-1 flex-shrink-0">•</span>
+                <span><span className="font-semibold text-primary">Solutions Specialist @ Zil Money</span> - leading API-driven automation, micro-app development, and white-labeling solutions for enterprise clients, while driving U.S. business growth and system scalability.</span>
+              </li>
+            </ul>
+
+            <p className="text-lg text-foreground leading-relaxed">
+              I thrive at the intersection of software engineering, systems thinking, and product strategy, whether it's architecting backend pipelines, developing automation workflows, or shaping go-to-market for emerging platforms.
+            </p>
+
+            <p className="text-lg text-foreground leading-relaxed">
+              <span className="font-semibold text-secondary">🔑 Core Skills:</span> API Integrations, TypeScript, Python, Java, Kotlin, PostgreSQL, Android, n8n, Docker, CI/CD, Scalable Architecture, AI/ML, FinTech Systems
+            </p>
+
+            <p className="text-lg text-foreground leading-relaxed">
+              <span className="font-semibold text-secondary">📩 Let's connect</span> if you're looking for someone who combines deep technical expertise with entrepreneurial drive - building technology that is not just functional, but transformative.
             </p>
 
             <div className="pt-8">

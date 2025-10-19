@@ -1,6 +1,14 @@
 import { useEffect, useRef } from "react";
 import { Briefcase } from "lucide-react";
 import ParallaxSection from "./ParallaxSection";
+import zilmoneyLogo from "@/assets/logos/zilmoney.png";
+import fewcutsLogo from "@/assets/logos/fewcuts.png";
+import uttylerLogo from "@/assets/logos/uttyler.png";
+import wehubLogo from "@/assets/logos/wehub.png";
+import privatetherapyLogo from "@/assets/logos/privatetherapy.png";
+import youngwithsolutionsLogo from "@/assets/logos/youngwithsolutions.png";
+import projectcubeLogo from "@/assets/logos/projectcube.png";
+import govtelanganaLogo from "@/assets/logos/govtelangana.png";
 
 const Experience = () => {
   const sectionRef = useRef<HTMLElement>(null);
@@ -26,8 +34,9 @@ const Experience = () => {
   const experiences = [
     {
       company: "Zil Money",
+      logo: zilmoneyLogo,
       role: "Solutions Specialist",
-      period: "Jul 2025 – Present · 4 mos",
+      period: "Jul 2025 - Present · 4 mos",
       location: "Tyler, Texas, United States · On-site",
       summary: "Full-time role focusing on API-driven automation, enterprise solutions, and product development.",
       highlights: [
@@ -40,8 +49,9 @@ const Experience = () => {
     },
     {
       company: "FewCuts",
+      logo: fewcutsLogo,
       role: "Co-Founder",
-      period: "Oct 2021 – Present · 4 yrs 1 mo",
+      period: "Oct 2021 - Present · 4 yrs 1 mo",
       location: "Delaware, United States · Remote",
       summary: "Full-time co-founder role building context-aware AI video editing platform for enterprises and podcast teams.",
       highlights: [
@@ -53,8 +63,9 @@ const Experience = () => {
     },
     {
       company: "University of Texas at Tyler",
+      logo: uttylerLogo,
       role: "Graduate Assistant",
-      period: "Jan 2024 – Dec 2024 · 1 yr",
+      period: "Jan 2024 - Dec 2024 · 1 yr",
       location: "Tyler, Texas, United States · On-site",
       summary: "Part-time role developing web-based and mobile-friendly tools for academic operations.",
       highlights: [
@@ -66,8 +77,9 @@ const Experience = () => {
     },
     {
       company: "WE Hub, A Government of Telangana Initiative",
+      logo: wehubLogo,
       role: "Developer and Product Management",
-      period: "Jan 2020 – Mar 2022 · 2 yrs 3 mos",
+      period: "Jan 2020 - Mar 2022 · 2 yrs 3 mos",
       location: "Greater Hyderabad Area · On-site",
       summary: "Contract role developing award-winning SoundTrap noise pollution reduction device.",
       highlights: [
@@ -78,8 +90,9 @@ const Experience = () => {
     },
     {
       company: "Private Therapy Clinic",
+      logo: privatetherapyLogo,
       role: "Content Producer and Analyst",
-      period: "Nov 2020 – Jan 2022 · 1 yr 3 mos",
+      period: "Nov 2020 - Jan 2022 · 1 yr 3 mos",
       location: "London Area, United Kingdom · Remote",
       summary: "Freelance role producing high-performance social media content for mental health clinic.",
       highlights: [
@@ -90,8 +103,9 @@ const Experience = () => {
     },
     {
       company: "Young With Solutions",
+      logo: youngwithsolutionsLogo,
       role: "Content Manager and Producer",
-      period: "Sep 2020 – Mar 2021 · 7 mos",
+      period: "Sep 2020 - Mar 2021 · 7 mos",
       location: "Remote",
       summary: "Full-time role managing data-driven social media growth and content strategy.",
       highlights: [
@@ -102,8 +116,9 @@ const Experience = () => {
     },
     {
       company: "ProjectCube",
+      logo: projectcubeLogo,
       role: "Product Development and Technical Support",
-      period: "Feb 2017 – Sep 2020 · 3 yrs 8 mos",
+      period: "Feb 2017 - Sep 2020 · 3 yrs 8 mos",
       location: "India · On-site",
       summary: "Full-time role co-founding and leading custom computer assembly startup.",
       highlights: [
@@ -113,6 +128,7 @@ const Experience = () => {
     },
     {
       company: "Government of Telangana",
+      logo: govtelanganaLogo,
       role: "Volunteer Staff",
       period: "Aug 2017 · 1 mo",
       location: "Hyderabad, Telangana, India · On-site",
@@ -149,8 +165,16 @@ const Experience = () => {
                 style={{ transitionDelay: `${index * 100}ms` }}
               >
                 <div className="flex items-start gap-4">
-                  <div className={`p-3 rounded-lg ${exp.featured ? "bg-primary/10" : "bg-accent"}`}>
-                    <Briefcase className={`h-6 w-6 ${exp.featured ? "text-primary" : "text-secondary"}`} />
+                  <div className={`p-3 rounded-lg ${exp.featured ? "bg-primary/10" : "bg-accent"} flex items-center justify-center`}>
+                    {exp.logo ? (
+                      <img 
+                        src={exp.logo} 
+                        alt={`${exp.company} logo`}
+                        className="h-12 w-12 object-contain"
+                      />
+                    ) : (
+                      <Briefcase className={`h-6 w-6 ${exp.featured ? "text-primary" : "text-secondary"}`} />
+                    )}
                   </div>
 
                   <div className="flex-1">
