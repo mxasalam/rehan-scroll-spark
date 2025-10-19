@@ -87,7 +87,7 @@ const Hero = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-white/20 text-white hover:bg-white/10 hover:border-white/30 shadow-md transition-all"
+                className="border-2 border-white/20 text-primary hover:bg-white/10 hover:border-white/30 shadow-md transition-all"
                 asChild
               >
                 <a
