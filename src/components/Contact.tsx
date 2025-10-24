@@ -80,7 +80,7 @@ const Contact = () => {
       `Name: ${formData.name.trim()}\nEmail: ${formData.email.trim()}\n\nMessage:\n${formData.message.trim()}`
     );
 
-    window.location.href = `mailto:mxasalam@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:salam@zilmoney.com?subject=${subject}&body=${body}`;
 
     toast({
       title: "Opening email client",
@@ -96,8 +96,8 @@ const Contact = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "mxasalam@gmail.com",
-      href: "mailto:mxasalam@gmail.com",
+      value: "salam@zilmoney.com",
+      href: "mailto:salam@zilmoney.com",
     },
     {
       icon: Linkedin,

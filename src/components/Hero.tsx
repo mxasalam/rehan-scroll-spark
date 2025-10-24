@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { Download, Linkedin, ArrowDown } from "lucide-react";
+import { Linkedin, ArrowDown } from "lucide-react";
 import ParallaxSection from "./ParallaxSection";
 import heroBackground from "@/assets/hero-bg.jpg";
 import portrait from "@/assets/portrait.jpeg";
@@ -58,7 +58,7 @@ const Hero = () => {
             <div className="section-appear space-y-4">
               <div className="inline-block">
                 <span className="text-sm font-medium text-primary bg-primary/10 px-4 py-2 rounded-full">
-                  Available for Opportunities
+                  Building the Future, One Line at a Time
                 </span>
               </div>
               <h1 className="text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-white leading-tight">
@@ -77,17 +77,6 @@ const Hero = () => {
               <Button
                 size="lg"
                 className="bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all group"
-                asChild
-              >
-                <a href="/assets/Mohammed_Abdul_Salam_Resume.pdf" download>
-                  <Download className="mr-2 h-5 w-5 group-hover:translate-y-0.5 transition-transform" />
-                  Download Resume
-                </a>
-              </Button>
-              <Button
-                size="lg"
-                variant="outline"
-                className="border-2 border-white/20 text-primary hover:bg-white/10 hover:border-white/30 shadow-md transition-all"
                 asChild
               >
                 <a

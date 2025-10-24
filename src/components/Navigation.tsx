@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
+import { useNavigate, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,26 +30,45 @@ const Navigation = () => {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId);
-    if (element) {
-      const offset = 80;
-      const elementPosition = element.getBoundingClientRect().top;
-      const offsetPosition = elementPosition + window.pageYOffset - offset;
+    // If not on home page, navigate to home first
+    if (location.pathname !== "/") {
+      navigate("/");
+      setTimeout(() => {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          const offset = 80;
+          const elementPosition = element.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - offset;
 
-      window.scrollTo({
-        top: offsetPosition,
-        behavior: "smooth"
-      });
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: "smooth"
+          });
+        }
+      }, 100);
+    } else {
+      const element = document.getElementById(sectionId);
+      if (element) {
+        const offset = 80;
+        const elementPosition = element.getBoundingClientRect().top;
+        const offsetPosition = elementPosition + window.pageYOffset - offset;
+
+        window.scrollTo({
+          top: offsetPosition,
+          behavior: "smooth"
+        });
+      }
     }
   };
 
   const navItems = [
-    { id: "home", label: "Home" },
-    { id: "about", label: "About" },
-    { id: "experience", label: "Experience" },
-    { id: "projects", label: "Projects" },
-    { id: "skills", label: "Skills" },
-    { id: "contact", label: "Contact" },
+    { id: "home", label: "Home", type: "scroll" },
+    { id: "about", label: "About", type: "scroll" },
+    { id: "experience", label: "Experience", type: "scroll" },
+    { id: "projects", label: "Projects", type: "scroll" },
+    { id: "skills", label: "Skills", type: "scroll" },
+    { id: "blog", label: "Blog", type: "link" },
+    { id: "contact", label: "Contact", type: "scroll" },
   ];
 
   return (
@@ -74,9 +96,10 @@ const Navigation = () => {
               {navItems.map(item => (
                 <button
                   key={item.id}
-                  onClick={() => scrollToSection(item.id)}
+                  onClick={() => item.type === "link" ? navigate("/blog") : scrollToSection(item.id)}
                   className={`text-sm font-medium transition-colors relative group ${
-                    activeSection === item.id
+                    (item.type === "scroll" && activeSection === item.id) || 
+                    (item.type === "link" && location.pathname === "/blog")
                       ? "text-primary"
                       : "text-foreground hover:text-primary"
                   }`}
@@ -84,7 +107,10 @@ const Navigation = () => {
                   {item.label}
                   <span
                     className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all ${
-                      activeSection === item.id ? "w-full" : "w-0 group-hover:w-full"
+                      (item.type === "scroll" && activeSection === item.id) || 
+                      (item.type === "link" && location.pathname === "/blog")
+                        ? "w-full" 
+                        : "w-0 group-hover:w-full"
                     }`}
                   />
                 </button>
