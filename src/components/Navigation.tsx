@@ -101,7 +101,9 @@ const Navigation = () => {
                     (item.type === "scroll" && activeSection === item.id) || 
                     (item.type === "link" && location.pathname === "/blog")
                       ? "text-primary"
-                      : "text-foreground hover:text-primary"
+                      : isScrolled 
+                        ? "text-foreground hover:text-primary" 
+                        : "text-white hover:text-primary"
                   }`}
                 >
                   {item.label}
