@@ -67,7 +67,8 @@ const Navigation = () => {
     { id: "experience", label: "Experience", type: "scroll" },
     { id: "projects", label: "Projects", type: "scroll" },
     { id: "skills", label: "Skills", type: "scroll" },
-    { id: "blog", label: "Blog", type: "link" },
+    { id: "blog", label: "Blog", type: "link", path: "/blog" },
+    { id: "motivations", label: "Motivations", type: "link", path: "/motivations" },
     { id: "contact", label: "Contact", type: "scroll" },
   ];
 
@@ -96,10 +97,10 @@ const Navigation = () => {
               {navItems.map(item => (
                 <button
                   key={item.id}
-                  onClick={() => item.type === "link" ? navigate("/blog") : scrollToSection(item.id)}
+                  onClick={() => item.type === "link" ? navigate(item.path || `/${item.id}`) : scrollToSection(item.id)}
                   className={`text-sm font-medium transition-colors relative group ${
                     (item.type === "scroll" && activeSection === item.id) || 
-                    (item.type === "link" && location.pathname === "/blog")
+                    (item.type === "link" && location.pathname === item.path)
                       ? "text-primary"
                       : isScrolled 
                         ? "text-foreground hover:text-primary" 
@@ -110,7 +111,7 @@ const Navigation = () => {
                   <span
                     className={`absolute -bottom-1 left-0 h-0.5 bg-primary transition-all ${
                       (item.type === "scroll" && activeSection === item.id) || 
-                      (item.type === "link" && location.pathname === "/blog")
+                      (item.type === "link" && location.pathname === item.path)
                         ? "w-full" 
                         : "w-0 group-hover:w-full"
                     }`}
